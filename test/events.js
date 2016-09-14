@@ -51,7 +51,7 @@ describe('events', function () {
       })
     })
     pool.on('connect', function () {
-      throw new Error('should never get here')
+      done(new Error('should never get here'))
     })
     pool.on('error', function (err) {
       if (!err) done(new Error('expected failure'))
